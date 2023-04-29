@@ -1,15 +1,25 @@
-exports.getAll = (req, res) => {
+const userRepository = require('../../infra/repository/user');
+
+exports.getAll = async (req, res) => {
+    let data = await userRepository.getAll();
     res.status(200).json({messge: 'get all'});
 };
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
+    let payload = req.body;
+    let data = await userRepository.create(payload);
     res.status(200).json({messge: 'create one'});
 }
 
-exports.update = (req, res) => {
+exports.update = async (req, res) => {
+    let {id} = req.params;
+    let payload = req.body;
+    let data = await userRepository.update(id, payload);
     res.status(200).json({messge: 'update one'});
 }
 
-exports.delete = (req, res) => {
+exports.delete = async (req, res) => {
+    let {id} = req.params;
+    await userRepository.delete(id);
     res.status(200).json({messge: 'delete one'});
 }
