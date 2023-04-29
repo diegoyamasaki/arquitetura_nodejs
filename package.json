@@ -1,0 +1,27 @@
+{
+  "name": "arquitetura_nodejs",
+  "version": "1.0.0",
+  "description": "exemplo de arquitetura de backend usando nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js localhost 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegoyamasaki/arquitetura_nodejs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Diego Flauzino Yamasaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegoyamasaki/arquitetura_nodejs/issues"
+  },
+  "homepage": "https://github.com/diegoyamasaki/arquitetura_nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
