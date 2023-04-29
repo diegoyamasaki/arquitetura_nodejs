@@ -1,6 +1,11 @@
 const express = require('express');
+const v1Route = require('./arquitetura/handler/api_v1/api');
 
 const app = express();
+
+app.use(express.json());
+
+app.use('/v1', v1Route);
 
 
 app.get('/', (req, res) => {
