@@ -1,21 +1,9 @@
 const userRouter = require('express').Router();
+const userApplication = require('../../../application/user');
 
-userRouter.get('/', (req, res) => {
-    res.json({message: 'user route'});
-});
-
-userRouter.post('/', (req, res) => {
-    res.json({message: 'user route post'});
-});
-
-
-userRouter.put('/:id', (req, res) => {
-    res.json({message: 'user route put'});
-});
-
-
-userRouter.delete('/:id', (req, res) => {
-    res.json({message: 'user route delete'});
-});
+userRouter.get('/', userApplication.getAll);
+userRouter.post('/', userApplication.create);
+userRouter.put('/:id', userApplication.update);
+userRouter.delete('/:id', userApplication.delete);
 
 module.exports = userRouter;

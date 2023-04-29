@@ -1,21 +1,9 @@
 const notificationRouter = require('express').Router();
+const notificationApplication = require('../../../application/notification');
 
-notificationRouter.get('/', (req, res) => {
-    res.json({message: 'notification route get'});
-});
-
-notificationRouter.post('/', (req, res) => {
-    res.json({message: 'notification route post'});
-});
-
-
-notificationRouter.put('/:id', (req, res) => {
-    res.json({message: 'notification route put'});
-});
-
-
-notificationRouter.delete('/:id', (req, res) => {
-    res.json({message: 'notification route delete'});
-});
+notificationRouter.get('/', notificationApplication.getAll);
+notificationRouter.post('/', notificationApplication.create);
+notificationRouter.put('/:id', notificationApplication.update);
+notificationRouter.delete('/:id', notificationApplication.delete);
 
 module.exports = notificationRouter;

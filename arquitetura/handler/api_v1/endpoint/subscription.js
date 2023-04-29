@@ -1,21 +1,9 @@
 const subscriptionRouter = require('express').Router();
+const subscriptionApplication = require('../../../application/subscription');
 
-subscriptionRouter.get('/', (req, res) => {
-    res.json({message: 'subscription route'});
-});
-
-subscriptionRouter.post('/', (req, res) => {
-    res.json({message: 'subscription route'});
-});
-
-
-subscriptionRouter.put('/:id', (req, res) => {
-    res.json({message: 'subscription route'});
-});
-
-
-subscriptionRouter.delete('/:id', (req, res) => {
-    res.json({message: 'subscription route'});
-});
+subscriptionRouter.get('/', subscriptionApplication.getAll);
+subscriptionRouter.post('/', subscriptionApplication.create);
+subscriptionRouter.put('/:id', subscriptionApplication.update);
+subscriptionRouter.delete('/:id', subscriptionApplication.delete);
 
 module.exports = subscriptionRouter;
