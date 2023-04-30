@@ -3,14 +3,14 @@ const SubscriptionRepository = require('../../infra/repository/subscription');
 exports.getAll = async (req, res) => {
     const subscriptionRepository = new SubscriptionRepository();
     let data = await subscriptionRepository.getAll();
-    res.status(200).json({messge: 'get all'});
+    res.status(200).json(data);
 };
 
 exports.create = async (req, res) => {
     let payload = req.body;
     const subscriptionRepository = new SubscriptionRepository();
     let data = await subscriptionRepository.create(payload);
-    res.status(200).json({messge: 'create one'});
+    res.status(200).json(data);
 }
 
 exports.update = async (req, res) => {
@@ -18,7 +18,7 @@ exports.update = async (req, res) => {
     let payload = req.body;
     const subscriptionRepository = new SubscriptionRepository();
     let data = await subscriptionRepository.update(id, payload);
-    res.status(200).json({messge: 'update one'});
+    res.status(200).json(data);
 }
 
 exports.delete = async (req, res) => {

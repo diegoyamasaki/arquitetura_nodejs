@@ -30,3 +30,8 @@ Abaixo o comando para executar a aplicação com nodemon:
 ```
 $ nodemon ./index.js localhost 3000
 ```
+
+Para configurar eslint use o comando abaixo:
+```
+$ npm init @eslint/config
+```

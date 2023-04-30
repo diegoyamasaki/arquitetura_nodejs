@@ -13,15 +13,15 @@ class UserRepoistory {
     }
 
     async create(payload){
-        console.log('create');
+        console.log('create', payload);
     }
 
     async update(id, payload) {
-        console.log('update');
+        console.log('update', id, payload);
     }
 
     async delete(id) {
-        console.log('delete');
+        console.log('delete', id);
     }
 }
 
